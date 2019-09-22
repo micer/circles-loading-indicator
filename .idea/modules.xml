@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cycloid-progress-bar.iml" filepath="$PROJECT_DIR$/cycloid-progress-bar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/circles-loading-indicator.iml" filepath="$PROJECT_DIR$/circles-loading-indicator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/circlesloadingindicator/circlesloadingindicator.iml" filepath="$PROJECT_DIR$/circlesloadingindicator/circlesloadingindicator.iml" />
     </modules>
   </component>
 </project>

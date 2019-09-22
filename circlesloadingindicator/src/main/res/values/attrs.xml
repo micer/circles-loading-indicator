@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CirclesLoadingIndicator">
+        <attr name="circlesCount" format="integer" />
+        <attr name="circlesRadius" format="dimension" />
+        <attr name="circlesColor" format="color" />
+        <attr name="rotationDuration" format="integer" />
+        <attr name="showLeadingCircle" format="boolean" />
+    </declare-styleable>
+</resources>
