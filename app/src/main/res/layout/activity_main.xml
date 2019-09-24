@@ -1,16 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/layout_frame"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <eu.micer.circlesloadingindicator.CirclesLoadingIndicator
-        android:layout_width="@dimen/circle_radius"
-        android:layout_height="@dimen/circle_radius"
-        android:layout_gravity="center"
-        app:circlesColor="@color/colorAccent"
-        app:circlesCount="8"
-        app:circlesRadius="4dp"
-        app:rotationDuration="3000" />
-</FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <eu.micer.circlesloadingindicator.CirclesLoadingIndicator
+            android:id="@+id/circles"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            app:circlesColor="@color/colorAccent"
+            app:circlesCount="8"
+            app:circlesRadius="4dp"
+            app:rotationDuration="3000"
+            app:showLeadingCircle="false" />
+    </FrameLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:background="#DDEEDD">
+
+    </GridLayout>
+</LinearLayout>
