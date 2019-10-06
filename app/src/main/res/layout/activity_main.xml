@@ -1,34 +1,241 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_frame"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <FrameLayout
+    <Button
+        android:id="@+id/btn_circles_count_minus"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="-"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_circles_count_plus"
+        app:layout_constraintEnd_toStartOf="@+id/et_circles_count" />
+
+    <Button
+        android:id="@+id/btn_circles_count_plus"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="16dp"
+        android:text="+"
+        app:layout_constraintBottom_toTopOf="@+id/btn_circles_radius_plus"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btn_duration_minus"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="-"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_duration_plus"
+        app:layout_constraintEnd_toStartOf="@+id/et_rotation_duration" />
+
+    <Button
+        android:id="@+id/btn_duration_plus"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="16dp"
+        android:text="+"
+        app:layout_constraintBottom_toTopOf="@+id/btn_reset"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btn_circles_radius_minus"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="-"
+        app:layout_constraintBottom_toBottomOf="@+id/et_circles_radius"
+        app:layout_constraintEnd_toStartOf="@+id/et_circles_radius" />
+
+    <Button
+        android:id="@+id/btn_circles_radius_plus"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="16dp"
+        android:text="+"
+        app:layout_constraintBottom_toTopOf="@+id/btn_duration_plus"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btn_reset"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="set default values"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <eu.micer.circlesloadingindicator.CirclesLoadingIndicator
-            android:id="@+id/circles"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_gravity="center"
-            app:circlesColor="@color/colorAccent"
-            app:circlesCount="8"
-            app:circlesRadius="4dp"
-            app:rotationDuration="3000"
-            app:showLeadingCircle="false" />
-    </FrameLayout>
+    <CheckBox
+        android:id="@+id/cb_leading_line"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/et_circles_count"
+        app:layout_constraintEnd_toStartOf="@+id/et_circles_count"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="@+id/btn_circles_count_plus" />
 
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        android:orientation="vertical"
-        android:background="#DDEEDD">
+    <EditText
+        android:id="@+id/et_circles_count"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:inputType="number"
+        android:text="8"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_circles_count_plus"
+        app:layout_constraintEnd_toStartOf="@+id/btn_circles_count_plus" />
 
-    </GridLayout>
-</LinearLayout>
+    <EditText
+        android:id="@+id/et_rotation_duration"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:inputType="number"
+        android:text="3000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_duration_plus"
+        app:layout_constraintEnd_toStartOf="@+id/btn_duration_plus" />
+
+    <EditText
+        android:id="@+id/et_circles_radius"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:inputType="number"
+        android:text="4"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_circles_radius_plus"
+        app:layout_constraintEnd_toStartOf="@+id/btn_circles_radius_plus" />
+
+    <ImageView
+        android:id="@+id/iv_color_red"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/circle_small"
+        android:tint="#d50000"
+        app:layout_constraintBottom_toTopOf="@+id/tv_leading_line_title"
+        app:layout_constraintEnd_toStartOf="@+id/iv_color_deep_purple"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_color_deep_purple"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/circle_small"
+        android:tint="#6200ea"
+        app:layout_constraintBottom_toTopOf="@+id/tv_leading_line_title"
+        app:layout_constraintEnd_toStartOf="@+id/iv_color_light_blue"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/iv_color_red" />
+
+    <ImageView
+        android:id="@+id/iv_color_light_blue"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/circle_small"
+        android:tint="#0091ea"
+        app:layout_constraintBottom_toTopOf="@+id/tv_leading_line_title"
+        app:layout_constraintEnd_toStartOf="@+id/iv_color_green"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/iv_color_deep_purple" />
+
+    <ImageView
+        android:id="@+id/iv_color_green"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/circle_small"
+        android:tint="#00c853"
+        app:layout_constraintBottom_toTopOf="@+id/tv_leading_line_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/iv_color_yellow"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/iv_color_light_blue" />
+
+    <!-- COLORS -->
+    <ImageView
+        android:id="@+id/iv_color_yellow"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/circle_small"
+        android:tint="#ffd600"
+        app:layout_constraintBottom_toTopOf="@+id/tv_leading_line_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/iv_color_brown"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/iv_color_green" />
+
+    <ImageView
+        android:id="@+id/iv_color_brown"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/circle_small"
+        android:tint="#3e2723"
+        app:layout_constraintBottom_toTopOf="@+id/tv_leading_line_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/iv_color_yellow" />
+
+    <TextView
+        android:id="@+id/tv_circles_count_title"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:gravity="center_vertical"
+        android:text="Number of circles:"
+        app:layout_constraintBottom_toTopOf="@+id/tv_circles_radius_title"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_leading_line_title"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:gravity="center_vertical"
+        android:text="Leading line:"
+        app:layout_constraintBottom_toTopOf="@+id/tv_circles_count_title"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_rotation_duration_title"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:gravity="center_vertical"
+        android:text="Rotation duration (=speed):"
+        app:layout_constraintBottom_toTopOf="@+id/btn_reset"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_circles_radius_title"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:gravity="center_vertical"
+        android:text="Circles radius:"
+        app:layout_constraintBottom_toTopOf="@+id/tv_rotation_duration_title"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <eu.micer.circlesloadingindicator.CirclesLoadingIndicator
+        android:id="@+id/circles_loading_indicator"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        app:circlesColor="@color/colorAccent"
+        app:circlesCount="8"
+        app:circlesRadius="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/iv_color_red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rotationDuration="3000"
+        app:showLeadingLine="false" />
+</androidx.constraintlayout.widget.ConstraintLayout>
