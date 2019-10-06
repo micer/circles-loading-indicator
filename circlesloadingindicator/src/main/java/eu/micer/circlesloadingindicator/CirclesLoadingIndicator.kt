@@ -18,11 +18,11 @@ class CirclesLoadingIndicator @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
 
-    private val circlesColor: Int
-    private val circlesCount: Int
-    private val circlesRadius: Float
-    private val rotationDuration: Int
-    private val showLeadingCircle: Boolean
+    var circlesColor: Int
+    var circlesCount: Int
+    var circlesRadius: Float
+    var rotationDuration: Int
+    var showLeadingLine: Boolean
 
     private lateinit var firstPaint: Paint
     private lateinit var secondPaint: Paint
@@ -41,8 +41,8 @@ class CirclesLoadingIndicator @JvmOverloads constructor(
                     getColor(R.styleable.CirclesLoadingIndicator_circlesColor, Color.BLACK)
                 rotationDuration =
                     getInt(R.styleable.CirclesLoadingIndicator_rotationDuration, 3000)
-                showLeadingCircle =
-                    getBoolean(R.styleable.CirclesLoadingIndicator_showLeadingCircle, false)
+                showLeadingLine =
+                    getBoolean(R.styleable.CirclesLoadingIndicator_showLeadingLine, false)
             } finally {
                 recycle()
             }
@@ -59,22 +59,22 @@ class CirclesLoadingIndicator @JvmOverloads constructor(
             strokeWidth = 2f
             style = Paint.Style.STROKE
         }
-
         secondPaint = Paint()
-        secondPaint.apply {
-            color = circlesColor
-        }
     }
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
+
+        secondPaint.apply {
+            color = circlesColor
+        }
 
         canvas?.let {
             val startAngle = -Math.PI / 2f
             val centerX = width / 2
             val centerY = height / 2
 
-            if (showLeadingCircle) {
+            if (showLeadingLine) {
                 canvas.drawCircle(
                     centerX.toFloat(),
                     centerY.toFloat(),
@@ -95,7 +95,7 @@ class CirclesLoadingIndicator @JvmOverloads constructor(
         }
     }
 
-    private fun startAnimation() {
+    fun startAnimation() {
         val rotateAnimation = RotateAnimation(
             0f,
             359f,

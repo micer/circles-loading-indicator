@@ -5,6 +5,6 @@
         <attr name="circlesRadius" format="dimension" />
         <attr name="circlesColor" format="color" />
         <attr name="rotationDuration" format="integer" />
-        <attr name="showLeadingCircle" format="boolean" />
+        <attr name="showLeadingLine" format="boolean" />
     </declare-styleable>
 </resources>
