@@ -7,7 +7,7 @@ A customizable loading indicator for Android.
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/eu.micer/circlesloadingindicator/badge.svg)](https://search.maven.org/artifact/eu.micer/circlesloadingindicator)
 
 ```gradle
-implementation 'implementation 'eu.micer:circlesloadingindicator:<version>'
+implementation 'eu.micer:circlesloadingindicator:<version>'
 ```
 
 ## Usage
