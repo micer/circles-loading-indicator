@@ -25,4 +25,4 @@ implementation 'implementation 'eu.micer:circlesloadingindicator:<version>'
 ```
 
 ## Sample
-![Example settings](/screenshots/device-2019-09-23-234018.png?raw=true "Example settings")
+![Example settings](/screenshots/device-2019-10-06-213739.gif "Example settings")
